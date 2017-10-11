@@ -304,9 +304,9 @@ public class BST<Key extends Comparable<Key>, Value> {
     	}
     }
     
-//    public Node LCA(Node x, Node y){
-//    	
-//    }
+     public Key LCA(Key x, Key y){
+    	
+     }
     
 
 }
