@@ -304,11 +304,12 @@ public class BST<Key extends Comparable<Key>, Value> {
     	}
     }
     
-     public Node LCA(Node x, Node y){
+     public Key LCA(Key x, Key y){
     	boolean running = true;
     	Node temp = root;
-    	int cmpX = x.key.compareTo(temp.key);
-    	int cmpY = y.key.compareTo(temp.key);
+    	System.out.print(temp.key);
+    	int cmpX = x.compareTo(temp.key);
+    	int cmpY = y.compareTo(temp.key);
     	while(running){
     		if(cmpX < 0 && cmpY < 0){
     			temp = temp.left;
@@ -317,10 +318,11 @@ public class BST<Key extends Comparable<Key>, Value> {
     			temp = temp.right;
     		}
     		else{
-    			return temp;
+    			//System.out.print(temp.key);
+    			return temp.key;
     		}
     	}
-    	return root;
+    	return temp.key;
     }
     
 
