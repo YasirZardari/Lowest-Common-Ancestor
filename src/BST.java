@@ -307,18 +307,19 @@ public class BST<Key extends Comparable<Key>, Value> {
      public Key LCA(Key x, Key y){
     	boolean running = true;
     	Node temp = root;
-    	System.out.print(temp.key);
-    	int cmpX = x.compareTo(temp.key);
-    	int cmpY = y.compareTo(temp.key);
+    	
     	while(running){
-    		if(cmpX < 0 && cmpY < 0){
+    		int cmpX = x.compareTo(temp.key);
+        	int cmpY = y.compareTo(temp.key);
+    		if(cmpX < 0 && cmpY < 0 && x!=temp.left.key && y!=temp.left.key){
+    			System.out.println("go left: " + temp.key);
     			temp = temp.left;
     		}
-    		else if(cmpX > 0 && cmpY > 0){
+    		else if(cmpX > 0 && cmpY > 0 && x!=temp.right.key && y!=temp.right.key){
+    			System.out.println("go right: " + temp.key);
     			temp = temp.right;
     		}
     		else{
-    			//System.out.print(temp.key);
     			return temp.key;
     		}
     	}

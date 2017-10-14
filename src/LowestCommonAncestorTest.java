@@ -23,11 +23,14 @@ public class LowestCommonAncestorTest {
 		bst.put(15, 15);
 		bst.put(13, 13);
 		bst.put(17, 17);
-
+		
 		
         
 		assertEquals(bst.get(7),bst.LCA(5, 12));
+		assertEquals(bst.get(7),bst.LCA(5, 6));
+		assertEquals(bst.get(5),bst.LCA(4, 6));
 		assertEquals(bst.get(12),bst.LCA(9, 17));
+		assertEquals(bst.get(7),bst.LCA(8, 12));
 	}
 
 }
