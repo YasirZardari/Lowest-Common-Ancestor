@@ -25,7 +25,8 @@ public class LowestCommonAncestorTest {
 		bst.put(17, 17);
 		
 		
-        
+        assertEquals(bst.get(7),bst.LCA(7, 7));
+        assertEquals(bst.get(7),bst.LCA(7, 4));
 		assertEquals(bst.get(7),bst.LCA(5, 12));
 		assertEquals(bst.get(7),bst.LCA(5, 6));
 		assertEquals(bst.get(5),bst.LCA(4, 6));
