@@ -303,24 +303,32 @@ public class BST<Key extends Comparable<Key>, Value> {
     		return max(temp.right);
     	}
     }
+     
     
+    /**
+     * Checks the Lowest Common Ancestor of two keys passed to the function.
+     * Start at root and move left or right depending on size of current node compared
+     * to two keys passed in.
+     * @param two keys in tree
+     */
+     
      public Key LCA(Key x, Key y){
     	boolean running = true;
     	Node temp = root;
     	
     	while(running){
-    		int cmpX = x.compareTo(temp.key);
+    		int cmpX = x.compareTo(temp.key);       
         	int cmpY = y.compareTo(temp.key);
-    		if(cmpX < 0 && cmpY < 0 && x!=temp.left.key && y!=temp.left.key){
-    			System.out.println("go left: " + temp.key);
+    		if(cmpX < 0 && cmpY < 0 && x!=temp.left.key && y!=temp.left.key){	//if keys are smaller than
+    			System.out.println("go left: " + temp.key);						//current node, move left
     			temp = temp.left;
     		}
-    		else if(cmpX > 0 && cmpY > 0 && x!=temp.right.key && y!=temp.right.key){
-    			System.out.println("go right: " + temp.key);
+    		else if(cmpX > 0 && cmpY > 0 && x!=temp.right.key && y!=temp.right.key){ //if keys larger then
+    			System.out.println("go right: " + temp.key);						 //current node, move right
     			temp = temp.right;
     		}
-    		else{
-    			return temp.key;
+    		else{							
+    			return temp.key;				// else return current node(LCA)
     		}
     	}
     	return temp.key;
