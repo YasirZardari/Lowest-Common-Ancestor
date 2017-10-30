@@ -320,12 +320,10 @@ public class BST<Key extends Comparable<Key>, Value> {
     		int cmpX = x.compareTo(temp.key);       
         	int cmpY = y.compareTo(temp.key);
     		if(cmpX < 0 && cmpY < 0 && x!=temp.left.key && y!=temp.left.key){	//if keys are smaller than
-    			System.out.println("go left: " + temp.key);						//current node, move left
-    			temp = temp.left;
+    			temp = temp.left;	//current node, move left
     		}
     		else if(cmpX > 0 && cmpY > 0 && x!=temp.right.key && y!=temp.right.key){ //if keys larger then
-    			System.out.println("go right: " + temp.key);						 //current node, move right
-    			temp = temp.right;
+    			temp = temp.right;			 //current node, move right
     		}
     		else{							
     			return temp.key;				// else return current node(LCA)

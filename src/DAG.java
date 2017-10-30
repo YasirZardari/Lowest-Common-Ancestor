@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 /*************************************************************************
  *  Compilation:  javac DAG.java 
  *  Execution:    java DAG filename.txt 
@@ -141,10 +144,33 @@ public class DAG {
         } 
         return s.toString(); 
     } 
- 
     
-    public int LCA(int x, int y){
-    	return 0;
+    public ArrayList<Integer> BFS(int x){
+    	ArrayList<Integer> list = new ArrayList<Integer>();
+    	boolean visited[] = new boolean[V];
+    	LinkedList<Integer> queue = new LinkedList<Integer>();
+    	visited[x] = true;
+		queue.add(x);
+    	
+		while(queue.size()!=0){
+			x = queue.poll();
+			Iterable<Integer> result = adj(x);
+			for(int i : result){
+				if (!visited[i])
+                {
+                    visited[i] = true;
+                    queue.add(i);
+                    list.add(i);
+                }
+			}
+		}
+    	
+    	return list;
+    }
+    
+    public void LCA(int x, int y){
+    	
+    	//return adj[1];
     }
     
  
