@@ -43,8 +43,19 @@ public class LowestCommonAncestorTest {
 		
 		dag.addEdge(1, 2);
 		dag.addEdge(1, 3);
-		dag.addEdge(3, 1);
-
+		dag.addEdge(2, 4);
+		dag.addEdge(2, 5);
+		dag.addEdge(3, 6);
+		dag.addEdge(4, 7);
+		dag.addEdge(5, 7);
+		dag.addEdge(6, 5);
+		dag.addEdge(6, 7);
+		
+		assertEquals(4,dag.LCA(1, 4));
+		assertEquals(7,dag.LCA(3, 4));
+		assertEquals(5,dag.LCA(2, 3));
+		assertEquals(5,dag.LCA(6, 2));
+		assertEquals(7,dag.LCA(1, 7));
 		
 	}
 

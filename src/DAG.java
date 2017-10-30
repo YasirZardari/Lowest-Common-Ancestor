@@ -25,12 +25,6 @@
  *   
  *************************************************************************/
  
-import java.util.InputMismatchException; 
-import java.util.NoSuchElementException;
-import java.util.Stack;
-
-import BST.Node; 
- 
 /**
  *  The <tt>DAG</tt> class represents a directed graph of vertices 
  *  named 0 through <em>V</em> - 1. 
@@ -62,7 +56,8 @@ public class DAG {
      * @param V the number of vertices 
      * @throws java.lang.IllegalArgumentException if V < 0 
      */ 
-    public DAG(int V) { 
+    @SuppressWarnings("unchecked")
+	public DAG(int V) { 
         if (V < 0) throw new IllegalArgumentException("Number of vertices in a DAG must be nonnegative"); 
         this.V = V; 
         this.E = 0; 
