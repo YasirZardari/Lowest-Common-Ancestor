@@ -27,7 +27,9 @@
  
 import java.util.InputMismatchException; 
 import java.util.NoSuchElementException;
-import java.util.Stack; 
+import java.util.Stack;
+
+import BST.Node; 
  
 /**
  *  The <tt>DAG</tt> class represents a directed graph of vertices 
@@ -145,12 +147,10 @@ public class DAG {
         return s.toString(); 
     } 
  
-    /**
-     * Unit tests the <tt>DAG</tt> data type. 
-     */ 
-    public static void main(String[] args) { 
-        //DAG G = new DAG(in); 
-
-    } 
+    
+    public int LCA(int x, int y){
+    	return 0;
+    }
+    
  
 }

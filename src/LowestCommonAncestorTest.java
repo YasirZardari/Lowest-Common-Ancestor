@@ -7,10 +7,7 @@ public class LowestCommonAncestorTest {
 	@Test
 	public void testLowestCommonAncestor() {
 		BST<Integer, Integer> bst = new BST<Integer, Integer>();
-		DAG<Integer, Integer> dag = new DAG<Integer, Integer>();
-		
-		dag.put(4, 5);
-		
+
 		bst.put(7, 7);			//sample binary search tree constructed: root = 7
 		bst.put(5, 5);			//				 _____7____
         bst.put(12, 12);		//			    /          \
@@ -38,6 +35,17 @@ public class LowestCommonAncestorTest {
 		assertEquals(bst.get(5),bst.LCA(3, 6));
 		assertEquals(bst.get(12),bst.LCA(8, 13));
 		assertEquals(bst.get(15),bst.LCA(13, 17));
+	}
+	
+	@Test
+	public void testLowestCommonAncestorDAG() {
+		DAG dag = new DAG(7);
+		
+		dag.addEdge(1, 2);
+		dag.addEdge(1, 3);
+		dag.addEdge(3, 1);
+
+		
 	}
 
 }
