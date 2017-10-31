@@ -168,9 +168,16 @@ public class DAG {
     	return list;
     }
     
-    public void LCA(int x, int y){
-    	
-    	//return adj[1];
+    public int LCA(int x, int y){
+    	ArrayList<Integer> xList = BFS(x);
+    	ArrayList<Integer> yList = BFS(y);
+    	int index = 0;
+    	for(int i : xList){
+    		if(i == yList.get(index)){
+    			return i;
+    		}
+    	}
+    	return -1; 
     }
     
  
