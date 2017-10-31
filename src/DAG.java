@@ -177,6 +177,7 @@ public class DAG {
     	
     	for(int i : commonAncestors){
     		ArrayList<Integer> List = BFS(i);
+    		List.remove(new Integer(i));
     		for(int j : List){
     			for(int k : commonAncestors){
     				if(j == k){

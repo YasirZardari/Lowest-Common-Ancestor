@@ -60,7 +60,7 @@ public class LowestCommonAncestorTest {
 		assertEquals(7,dag.LCA(3, 4));
 		assertEquals(5,dag.LCA(2, 3));
 		assertEquals(5,dag.LCA(6, 2));
-		assertEquals(5,dag.LCA(6, 1));
+		assertEquals(6,dag.LCA(6, 1));
 		assertEquals(7,dag.LCA(1, 7));
 		
 	}
