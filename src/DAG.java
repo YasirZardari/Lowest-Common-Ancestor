@@ -151,7 +151,7 @@ public class DAG {
     	LinkedList<Integer> queue = new LinkedList<Integer>();
     	visited[x] = true;
 		queue.add(x);
-    	
+    	list.add(x);
 		while(queue.size()!=0){
 			x = queue.poll();
 			Iterable<Integer> result = adj(x);
@@ -171,13 +171,24 @@ public class DAG {
     public int LCA(int x, int y){
     	ArrayList<Integer> xList = BFS(x);
     	ArrayList<Integer> yList = BFS(y);
-    	int index = 0;
-    	for(int i : xList){
-    		if(i == yList.get(index)){
-    			return i;
+    	ArrayList<Integer> commonAncestors = new ArrayList<>(xList);
+    	commonAncestors.retainAll(yList);
+    	ArrayList<Integer> result = new ArrayList<>(commonAncestors);
+    	
+    	for(int i : commonAncestors){
+    		ArrayList<Integer> List = BFS(i);
+    		for(int j : List){
+    			for(int k : commonAncestors){
+    				if(j == k){
+    					result.remove(new Integer(j));
+    				}
+    			}
     		}
     	}
-    	return -1; 
+    	
+    	return result.get(0);
+    	
+    	
     }
     
  

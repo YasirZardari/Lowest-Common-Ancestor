@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -54,10 +55,12 @@ public class LowestCommonAncestorTest {
 		dag.addEdge(6, 5);
 		dag.addEdge(6, 7);
 		
+		
 		assertEquals(4,dag.LCA(1, 4));
 		assertEquals(7,dag.LCA(3, 4));
 		assertEquals(5,dag.LCA(2, 3));
 		assertEquals(5,dag.LCA(6, 2));
+		assertEquals(5,dag.LCA(6, 1));
 		assertEquals(7,dag.LCA(1, 7));
 		
 	}
@@ -75,6 +78,8 @@ public class LowestCommonAncestorTest {
 		dag.addEdge(5, 7);
 		dag.addEdge(6, 5);
 		dag.addEdge(6, 7);
+		
+		
 		
 		ArrayList<Integer> test1 = new ArrayList<>(Arrays.asList(2,3,4,5,6,7));
 		ArrayList<Integer> test2 = new ArrayList<>(Arrays.asList(4,5,7));
