@@ -145,8 +145,11 @@ public class DAG {
         return s.toString(); 
     } 
     
+    // Breadth first search traversal. Uses queue. Enqueues first node. Node is de-queued and 
+    // unvisited adjacent nodes checked. They are added to result list and is added to queue. 
+    // This is repeated until queue is empty.
     public ArrayList<Integer> BFS(int x){
-    	ArrayList<Integer> list = new ArrayList<Integer>();
+    	ArrayList<Integer> list = new ArrayList<Integer>();		
     	boolean visited[] = new boolean[V];
     	LinkedList<Integer> queue = new LinkedList<Integer>();
     	visited[x] = true;
@@ -168,6 +171,11 @@ public class DAG {
     	return list;
     }
     
+    // Ancestors of each passed node calcualted and stored in list. 
+    // Common ancestors between these two are stored in a new list.
+    // Nodes ancestors in this list are checked with other nodes in the list.
+    // If match found, remove that node from the list.
+    // Last node remaining is LCA. 
     public int LCA(int x, int y){
     	ArrayList<Integer> xList = BFS(x);
     	ArrayList<Integer> yList = BFS(y);
